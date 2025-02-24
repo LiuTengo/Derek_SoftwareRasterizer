@@ -77,5 +77,8 @@
     <ClInclude Include="Source\Rendering\Shader.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ObjLoader\OBJ_Loader.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

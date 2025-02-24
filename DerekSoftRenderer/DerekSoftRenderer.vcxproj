@@ -139,6 +139,7 @@
     <ClCompile Include="Source\Rendering\Private\Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\ObjLoader\OBJ_Loader.hpp" />
     <ClInclude Include="Source\Rendering\Shader.h" />
     <ClInclude Include="Source\Rendering\Material.h" />
     <ClInclude Include="Source\Math\ConstMathValue.hpp" />
