@@ -7,6 +7,11 @@ Renderer::Renderer()
 	depthBuffer = std::vector<float>(totalPixel, std::numeric_limits<float>::infinity());
 }
 
+Renderer::~Renderer()
+{
+	OutputDebugString((L"Close Window\n"));
+}
+
 void Renderer::ClearDepth()
 {
 	std::fill(depthBuffer.begin(), depthBuffer.end(), std::numeric_limits<float>::infinity());
@@ -17,11 +22,11 @@ void Renderer::ClearColor()
 	std::fill(frameBuffer.begin(),frameBuffer.end(),Vector3f{0,0,0});
 }
 
-bool Renderer::IsInTriangle(const Triangle& t, float x, float y)
+bool Renderer::IsInTriangle(Triangle* t, float x, float y)
 {
 	Vector3f v[3];
 	for (int i = 0; i < 3;i++) {
-		v[i] = Vector3f{t.points[i][0],t.points[i][1],1.0f};
+		v[i] = Vector3f{t->vertices[i].points.x(),t->vertices[i].points.y(),1.0f};
 	}
 	
 	Vector3f v1 = v[1].cross(v[0]);
@@ -39,7 +44,7 @@ void Renderer::Draw(const HDC& hdc, Scene* scene)
 		return;
 	}
 	//更新VP矩阵
-	//mvp = ...
+	vp = scene->GetVPMatrix();
 	
 	//清除Buffer
 	ClearDepth();
@@ -51,6 +56,8 @@ void Renderer::Draw(const HDC& hdc, Scene* scene)
 	//	}
 	// }
 	for(auto obj : scene->objectArray) {
+
+		mvp = vp*obj->GetModelMatrix();
 		//应用顶点着色器
 		obj->UseVertexShader();
 		//裁剪
@@ -66,22 +73,22 @@ void Renderer::Draw(const HDC& hdc, Scene* scene)
 	CopyBufferToHDC(hdc); 
 }
 
-void Renderer::Rasterize(Object* obj)
+void Renderer::Rasterize(MeshObject* obj)
 {
 	for (const auto& triangle : obj->triangleList) {
-		auto v = triangle.toVector4();
+		auto v = triangle->toVector4();
 
-		int xMax = max(triangle.points[0].x(), max(triangle.points[1].x(), triangle.points[2].x()));
-		int xMin = min(triangle.points[0].x(), min(triangle.points[1].x(), triangle.points[2].x()));
-		int yMax = max(triangle.points[0].y(), max(triangle.points[1].y(), triangle.points[2].y()));
-		int yMin = min(triangle.points[0].y(), min(triangle.points[1].y(), triangle.points[2].y()));
+		int xMax = max(triangle->vertices[0].points.x(), max(triangle->vertices[1].points.x(), triangle->vertices[2].points.x()));
+		int xMin = min(triangle->vertices[0].points.x(), min(triangle->vertices[1].points.x(), triangle->vertices[2].points.x()));
+		int yMax = max(triangle->vertices[0].points.y(), max(triangle->vertices[1].points.y(), triangle->vertices[2].points.y()));
+		int yMin = min(triangle->vertices[0].points.y(), min(triangle->vertices[1].points.y(), triangle->vertices[2].points.y()));
 
 		for (int x = xMin; x < xMax; x++) {
 			for (int y = yMin; y < yMax; y++) {
 				if (IsInTriangle(triangle, (float)x+0.5f, (float)y+0.5f)) {
 					//计算重心坐标
 					float alpha, beta, gamma;
-					std::tie(alpha,beta,gamma) = ComputeBarycentricCoordinate((float)x + 0.5f, (float)y + 0.5f, triangle.points);
+					std::tie(alpha,beta,gamma) = ComputeBarycentricCoordinate((float)x + 0.5f, (float)y + 0.5f, triangle->vertices);
 					float w_reciprocal = 1.0 / (alpha / v[0].w() + beta / v[1].w() + gamma / v[2].w());
 					float z_interpolated = alpha * v[0].z() / v[0].w() + beta * v[1].z() / v[1].w() + gamma * v[2].z() / v[2].w();
 					z_interpolated *= w_reciprocal;
@@ -124,10 +131,10 @@ bool Renderer::DepthTest(const int& index, const float& depth)
 	return false;
 }
 
-std::tuple<float, float, float> Renderer::ComputeBarycentricCoordinate(float x, float y, const Vector4f* v)
+std::tuple<float, float, float> Renderer::ComputeBarycentricCoordinate(float x, float y, const Vertex* v)
 {
-	float c1 = (x * (v[1].y() - v[2].y()) + (v[2].x() - v[1].x()) * y + v[1].x() * v[2].y() - v[2].x() * v[1].y()) / (v[0].x() * (v[1].y() - v[2].y()) + (v[2].x() - v[1].x()) * v[0].y() + v[1].x() * v[2].y() - v[2].x() * v[1].y());
-	float c2 = (x * (v[2].y() - v[0].y()) + (v[0].x() - v[2].x()) * y + v[2].x() * v[0].y() - v[0].x() * v[2].y()) / (v[1].x() * (v[2].y() - v[0].y()) + (v[0].x() - v[2].x()) * v[1].y() + v[2].x() * v[0].y() - v[0].x() * v[2].y());
-	float c3 = (x * (v[0].y() - v[1].y()) + (v[1].x() - v[0].x()) * y + v[0].x() * v[1].y() - v[1].x() * v[0].y()) / (v[2].x() * (v[0].y() - v[1].y()) + (v[1].x() - v[0].x()) * v[2].y() + v[0].x() * v[1].y() - v[1].x() * v[0].y());
+	float c1 = (x * (v[1].points.y() - v[2].points.y()) + (v[2].points.x() - v[1].points.x()) * y + v[1].points.x() * v[2].points.y() - v[2].points.x() * v[1].points.y()) / (v[0].points.x() * (v[1].points.y() - v[2].points.y()) + (v[2].points.x() - v[1].points.x()) * v[0].points.y() + v[1].points.x() * v[2].points.y() - v[2].points.x() * v[1].points.y());
+	float c2 = (x * (v[2].points.y() - v[0].points.y()) + (v[0].points.x() - v[2].points.x()) * y + v[2].points.x() * v[0].points.y() - v[0].points.x() * v[2].points.y()) / (v[1].points.x() * (v[2].points.y() - v[0].points.y()) + (v[0].points.x() - v[2].points.x()) * v[1].points.y() + v[2].points.x() * v[0].points.y() - v[0].points.x() * v[2].points.y());
+	float c3 = (x * (v[0].points.y() - v[1].points.y()) + (v[1].points.x() - v[0].points.x()) * y + v[0].points.x() * v[1].points.y() - v[1].points.x() * v[0].points.y()) / (v[2].points.x() * (v[0].points.y() - v[1].points.y()) + (v[1].points.x() - v[0].points.x()) * v[2].points.y() + v[0].points.x() * v[1].points.y() - v[1].points.x() * v[0].points.y());
 	return { c1,c2,c3 };
 }

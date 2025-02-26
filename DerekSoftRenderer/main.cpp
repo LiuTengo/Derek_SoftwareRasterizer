@@ -4,15 +4,25 @@
 #include <iostream>
 
 #include "Source/Rendering/Renderer.h"
-#include "Source/Math/Matrix.hpp"
-#include "Source/Math/Vector.hpp"
+
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-Renderer* renderer;
+std::shared_ptr<Renderer> renderer;
+Scene* scene;
 
+void InitData() {
+    renderer = std::make_shared<Renderer>();
+    scene = new Scene(2);
 
-void Draw(const HDC& hdc,Renderer* renderer) {
+    scene->SetRenderer(renderer);
+}
+
+void OnCloseWindow() {
+
+}
+
+void Draw(const HDC& hdc,const std::shared_ptr<Renderer>& renderer) {
     //Ë«»º³å»æÖÆ
     
     //´´½¨»º³åÇø
@@ -25,55 +35,6 @@ void Draw(const HDC& hdc,Renderer* renderer) {
     BitBlt(hdc,0,0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,mdc,0,0,SRCCOPY);
     //ÊÍ·Å»º³åÇø
     DeleteDC(mdc);
-}
-
-int main() {
-    
-    //std::vector<Triangle> triangles = std::vector<Triangle>(1, 
-    //    Triangle(Vector3f{ 0.2f,0.0f,0.0f }, Vector3f{ 0.0f,0.3f,0.0f }, Vector3f{ 0.5f,0.5f,0.0f }));
-    //std::cout << triangles[0].points[0] << std::endl;
-    //std::cout << triangles[0].points[1] << std::endl;
-    //std::cout << triangles[0].points[2] << std::endl;
-
-    ////Ó³Éäµ½ÆÁÄ»×ø±ê
-    //Vector3f screenSize = Vector3f{ (float)RendererSettings::RENDER_TARGET_WIDTH , (float)RendererSettings::RENDER_TARGET_HEIGHT ,1 };
-    //for (auto& t : triangles) {
-    //    t.points[0] *= screenSize;
-    //    t.points[1] *= screenSize;
-    //    t.points[2] *= screenSize;
-
-    //    std::cout << t.points[0] << std::endl;
-    //    std::cout << t.points[1] << std::endl;
-    //    std::cout << t.points[2] << std::endl;
-    //}
-
-    //Test
-    Matrix4X4i mat1 = {
-        {2,1,3,4},
-        {0,0,0,0},
-        {1,1,1,1},
-        {1,2,3,4}
-    };
-
-    Matrix4X4i mat2 = {
-        {2,0,0,0},
-        {0,2,0,0},
-        {0,0,2,0},
-        {0,0,0,2}
-    };
-    Matrix4X4i mat;
-    Matrix4X4i::PrintMatrix(mat);
-
-    Vector3f vec3 = { 2,1,3 };
-    Vector4f vec4 = vec3.expand();
-    Matrix4X4f transformMat = {
-        {1,0,0,-1},
-        {0,1,0,0},
-        {0,0,1,1},
-        {0,0,0,1}
-    };
-    Vector4f vec = transformMat * vec4;
-    std::cout << vec << std::endl;
 }
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
@@ -105,7 +66,6 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
         hInstance,  // Instance handle
         NULL        // Additional application data
     );
-    renderer = new Renderer();
 
     if (hwnd == NULL)
     {
@@ -132,9 +92,9 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     switch (uMsg)
     {
     case WM_DESTROY:
+        OnCloseWindow();
+
         PostQuitMessage(0);
-        //std::cout << "Close Window" << std::endl;
-        OutputDebugString((L"Close Window\n"));
         return 0;
     //case WM_SIZE:
     //    RendererSettings::RENDER_TARGET_HEIGHT = HIWORD(lParam);
@@ -156,4 +116,53 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
     }
     return DefWindowProc(hwnd, uMsg, wParam, lParam);
+}
+
+int main() {
+
+    //std::vector<Triangle> triangles = std::vector<Triangle>(1, 
+    //    Triangle(Vector3f{ 0.2f,0.0f,0.0f }, Vector3f{ 0.0f,0.3f,0.0f }, Vector3f{ 0.5f,0.5f,0.0f }));
+    //std::cout << triangles[0].points[0] << std::endl;
+    //std::cout << triangles[0].points[1] << std::endl;
+    //std::cout << triangles[0].points[2] << std::endl;
+
+    ////Ó³Éäµ½ÆÁÄ»×ø±ê
+    //Vector3f screenSize = Vector3f{ (float)RendererSettings::RENDER_TARGET_WIDTH , (float)RendererSettings::RENDER_TARGET_HEIGHT ,1 };
+    //for (auto& t : triangles) {
+    //    t.points[0] *= screenSize;
+    //    t.points[1] *= screenSize;
+    //    t.points[2] *= screenSize;
+
+    //    std::cout << t.points[0] << std::endl;
+    //    std::cout << t.points[1] << std::endl;
+    //    std::cout << t.points[2] << std::endl;
+    //}
+
+    //Test
+    //Matrix4X4i mat1 = {
+    //    {2,1,3,4},
+    //    {0,0,0,0},
+    //    {1,1,1,1},
+    //    {1,2,3,4}
+    //};
+
+    //Matrix4X4i mat2 = {
+    //    {2,0,0,0},
+    //    {0,2,0,0},
+    //    {0,0,2,0},
+    //    {0,0,0,2}
+    //};
+    //Matrix4X4i mat;
+    //Matrix4X4i::PrintMatrix(mat);
+
+    //Vector3f vec3 = { 2,1,3 };
+    //Vector4f vec4 = vec3.expand();
+    //Matrix4X4f transformMat = {
+    //    {1,0,0,-1},
+    //    {0,1,0,0},
+    //    {0,0,1,1},
+    //    {0,0,0,1}
+    //};
+    //Vector4f vec = transformMat * vec4;
+    //std::cout << vec << std::endl;
 }

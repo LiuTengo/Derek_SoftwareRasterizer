@@ -1,8 +1,8 @@
 #include "../Material.h"
 
-Material::Material(const Shader*& shader)
+Material::Material(Shader s)
 {
-	this->shader = std::make_shared<Shader>(shader);
+	this->shader = std::make_shared<Shader>(s);
 }
 
 Material::~Material()

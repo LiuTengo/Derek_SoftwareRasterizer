@@ -1,6 +1,4 @@
 #include "../Camera.h"
-#include "../../Rendering/RendererSettings.h"
-#include "../../Math/ConstMathValue.hpp"
 
 Camera::Camera()
 	:nearPlane(0.1f),farPlane(50.0f),fov(45.0f),aspectRatio(RendererSettings::WINDOW_WIDTH/ RendererSettings::WINDOW_HEIGHT)

@@ -1,5 +1,9 @@
 #pragma once
 #include "Object.h"
+#include "../Math/Vector.hpp"
+#include "../Math/Matrix.hpp"
+#include "../Rendering/RendererSettings.h"
+#include "../Math/ConstMathValue.hpp"
 
 enum class ProjectionType {
 	Orthographic,
@@ -12,6 +16,9 @@ public:
 	float farPlane, nearPlane;
 	float fov;
 	float aspectRatio;
+
+	Vector3f position;
+	Vector3f rotation;
 
 public:
 	Camera();

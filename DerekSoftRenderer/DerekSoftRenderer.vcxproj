@@ -104,7 +104,8 @@
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE_WINDOW;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -128,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Gameplay\Private\MeshObject.cpp" />
     <ClCompile Include="Source\Rendering\Private\Shader.cpp" />
     <ClCompile Include="Source\Rendering\Private\Material.cpp" />
     <ClCompile Include="Source\Rendering\Private\RendererSettings.cpp" />
@@ -139,7 +141,8 @@
     <ClCompile Include="Source\Rendering\Private\Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\ObjLoader\OBJ_Loader.hpp" />
+    <ClInclude Include="Source\Gameplay\MeshObject.h" />
+    <ClInclude Include="Source\ObjLoader\OBJ_Loader.h" />
     <ClInclude Include="Source\Rendering\Shader.h" />
     <ClInclude Include="Source\Rendering\Material.h" />
     <ClInclude Include="Source\Math\ConstMathValue.hpp" />

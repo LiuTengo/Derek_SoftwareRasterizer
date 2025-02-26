@@ -1,11 +1,13 @@
 #pragma once
+#ifndef DEREK_SOFTWARE_VECTOR_H
+#define DEREK_SOFTWARE_VECTOR_H
 
 #include <cassert>
 #include <iostream>
 #include <math.h>
 #include <array>
 
-#pragma region Vector
+#pragma region VectorTemplate
 
 template <int n, class T>
 class Vector {
@@ -439,7 +441,7 @@ template<class T>
 inline Vector<4, T>::~Vector()
 {
 	std::cout << "Delete Vector" << std::endl;
-	std::cout << data[0] << " " << data[1] << " " << data[2] << " " << data[3]<< std::endl;
+	std::cout << data[0] << " " << data[1] << " " << data[2] << " " << data[3] << std::endl;
 }
 
 template<class T>
@@ -484,3 +486,6 @@ typedef Vector<4, float> Vector4f;
 typedef Vector<2, double> Vector2d;
 typedef Vector<3, double> Vector3d;
 typedef Vector<4, double> Vector4d;
+
+
+#endif // !DEREK_SOFTWARE_VECTOR_H

@@ -42,6 +42,9 @@
     <ClCompile Include="Source\Rendering\Private\Shader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Gameplay\Private\MeshObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Gameplay\Object.h">
@@ -77,7 +80,10 @@
     <ClInclude Include="Source\Rendering\Shader.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ObjLoader\OBJ_Loader.hpp">
+    <ClInclude Include="Source\Gameplay\MeshObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ObjLoader\OBJ_Loader.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

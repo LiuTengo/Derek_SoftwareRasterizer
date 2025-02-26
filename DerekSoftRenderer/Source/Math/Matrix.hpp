@@ -1,23 +1,28 @@
 #pragma once
+
+#ifndef DEREK_SOFTWARE_MATRIX_H
+#define DEREK_SOFTWARE_MATRIX_H
+
 #include <iostream>
 #include <array>
 
 #include "Vector.hpp"
 
 //m–– n¡–
-template<class T,int m,int n>
+template<class T, int m, int n>
 class Matrix {
 public:
 	Matrix();
 	Matrix(std::initializer_list<std::initializer_list<T>> list);
 	~Matrix();
 public:
+	static Matrix<T, m, n> Identity();
 	static void PrintMatrix(const Matrix<T, m, n>& mat);
 public:
-	std::array<std::array<T,n>,m> data;
+	std::array<std::array<T, n>, m> data;
 
 public:
-	bool IsSameDimension(int r,int c);
+	bool IsSameDimension(int r, int c);
 	bool CanMultiply(int r);
 	bool IsSquare();
 	bool CanInverse();
@@ -30,7 +35,7 @@ public:
 	template<int bCol>
 	Matrix<T, m, bCol> operator * (const Matrix<T, n, bCol>& mat);
 	Vector<m, T> operator * (const Vector<n, T>& vec);
-	
+
 	std::array<T, n>& operator [](int index);
 	const std::array<T, n>& operator [](int index) const;
 
@@ -43,9 +48,9 @@ public:
 
 #pragma region Construction & Deconstruction=
 template<class T, int m, int n>
-inline Matrix<T,m,n>::Matrix()
+inline Matrix<T, m, n>::Matrix()
 {
-	data.fill(std::array<T,m>());
+	data.fill(std::array<T, m>());
 }
 
 template<class T, int m, int n>
@@ -56,7 +61,7 @@ inline Matrix<T, m, n>::Matrix(std::initializer_list<std::initializer_list<T>> l
 	}
 	else {
 		auto rowIter = list.begin();
-		for (int i = 0; i < n;i++,rowIter++) {
+		for (int i = 0; i < n; i++, rowIter++) {
 			if (rowIter->size() != n) {
 				throw std::invalid_argument("Incorrect number of columns");
 			}
@@ -76,6 +81,22 @@ inline Matrix<T, m, n>::~Matrix()
 #pragma endregion
 
 #pragma region Static Functions
+template<class T, int m, int n>
+inline Matrix<T, m, n> Matrix<T, m, n>::Identity()
+{
+	Matrix<T, m, n> res;
+	for (int i = 0; i < m;i++) {
+		for (int j = 0; j < n;j++) {
+			if (i==j) {
+				res[i][j] = 1;
+			}
+			else {
+				res[i][j] = 0;
+			}
+		}
+	}
+	return res;
+}
 template<class T, int m, int n>
 inline void Matrix<T, m, n>::PrintMatrix(const Matrix<T, m, n>& mat)
 {
@@ -166,11 +187,11 @@ inline Matrix<T, m, bCol> Matrix<T, m, n>::operator*(const Matrix<T, n, bCol>& m
 }
 
 template<class T, int m, int n>
-inline Vector<m, T> Matrix<T, m, n>::operator*(const Vector<n,T> &vec)
+inline Vector<m, T> Matrix<T, m, n>::operator*(const Vector<n, T>& vec)
 {
 	Vector<m, T> res = Vector<m, T>();
-	for (int i = 0; i < m;i++) {
-		for (int j = 0; j < n;j++) {
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
 			res[i] += data[i][j] * vec[j];
 		}
 	}
@@ -178,7 +199,7 @@ inline Vector<m, T> Matrix<T, m, n>::operator*(const Vector<n,T> &vec)
 }
 
 template<class T, int m, int n>
-inline std::array<T,n>& Matrix<T, m, n>::operator[](int index)
+inline std::array<T, n>& Matrix<T, m, n>::operator[](int index)
 {
 	if (index >= m || index < 0) {
 		std::out_of_range("Row index out of range");
@@ -225,7 +246,7 @@ inline Matrix<T, m, n> Matrix<T, m, n>::operator/(const T& p)
 template<class T, int m, int n>
 inline Matrix<T, n, m> Matrix<T, m, n>::Transpose() const
 {
-	Matrix<T,n,m> transpose = Matrix<T, m, n>();;
+	Matrix<T, n, m> transpose = Matrix<T, m, n>();;
 
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
@@ -259,3 +280,5 @@ typedef Matrix<float, 4, 4> Matrix4X4f;
 
 typedef Matrix<double, 3, 3> Matrix3X3d;
 typedef Matrix<double, 4, 4> Matrix4X4d;
+
+#endif // !DEREK_SOFTWARE_MATRIX_H

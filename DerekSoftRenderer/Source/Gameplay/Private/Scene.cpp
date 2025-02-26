@@ -2,29 +2,41 @@
 
 Scene::Scene()
 {
-	objectArray = std::vector<Object*>(1, nullptr);
+	objectArray = std::vector<MeshObject *>(1, nullptr);
 }
 
 Scene::Scene(int maxObjectNum)
 {
-	objectArray = std::vector<Object*>(maxObjectNum,nullptr);
+	objectArray = std::vector<MeshObject *>(maxObjectNum,nullptr);
 }
 
 Scene::~Scene()
 {
 }
 
-void Scene::AddObject(Object* newObj)
+void Scene::AddObject(MeshObject* newObj)
 {
 	if (newObj != nullptr) {
 		objectArray.push_back(newObj);
-		if (typeid(newObj) ==  typeid(Camera)) {
-			std::swap(objectArray[0], objectArray[objectArray.size()-1]);
-		}
 	}
 }
 
-void Scene::SetMainCamera(Camera* mainCam)
+void Scene::SetMainCamera(Camera mainCam)
 {
 	camera = std::make_unique<Camera>(mainCam);
+}
+
+void Scene::SetRenderer(std::shared_ptr<Renderer> rend)
+{
+	for (auto& obj : objectArray) {
+		obj->SetRenderer(rend);
+	}
+}
+
+Matrix4X4f Scene::GetVPMatrix()
+{
+	if (camera) {
+		return camera->GetVPMatrix();
+	}
+	return Matrix4X4f::Identity();
 }
