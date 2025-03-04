@@ -1,26 +1,26 @@
 #include "../Material.h"
 
-Material::Material(Shader s)
+Material::Material(Shader* shader)
 {
-	this->shader = std::make_shared<Shader>(s);
+	this->shader.reset(shader);
 }
 
 Material::~Material()
 {
 }
 
-//接收CPU读取的文件数据，转换成VS的顶点数据
-void Material::SetVertexInputData(const Triangle& triangle)
+FragmentInput Material::ApplyVertexShader(const VertexInput& input)
 {
-	
+	return shader->VertexShader(input);
 }
 
-void Material::ApplyVertexShader()
+Vector3f Material::ApplyFragmentShader(FragmentInput& input)
 {
-	fragInput = shader->VertexShader(vertInput);
+	input.SetTexture(texture);
+	return shader->FragmentShader(input);
 }
 
-Vector3f Material::ApplyFragmentShader()
+void Material::SetTexture(Texture* texture)
 {
-	return shader->FragmentShader(fragInput);
+	this->texture.reset(texture);
 }

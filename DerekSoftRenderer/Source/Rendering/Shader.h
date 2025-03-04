@@ -1,19 +1,7 @@
 #pragma once
 #include "../Math/Vector.hpp"
-
-struct VertexInput {
-	Vector4f modelPosition;
-	Vector3f normal;
-	Vector3f color;
-	Vector2f uv;
-};
-
-struct FragmentInput {
-	Vector4f clipPosition;
-	Vector3f worldPosition;
-	Vector3f worldNormal;
-	Vector2f uv;
-};
+#include "../Math/Matrix.hpp"
+#include "Vertex.hpp"
 
 class Shader
 {

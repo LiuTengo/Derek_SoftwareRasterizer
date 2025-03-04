@@ -242,7 +242,7 @@ public:
 	Vector<3, T> cross(const Vector<3, T>& vec);
 	T dot(const Vector<3, T>& vec);
 	void normalize();
-	Vector<4, T> expand() const;
+	Vector<4, T> toVector4() const;
 };
 
 template<class T>
@@ -317,7 +317,7 @@ inline void Vector<3, T>::normalize()
 	}
 }
 template<class T>
-inline Vector<4, T> Vector<3, T>::expand() const
+inline Vector<4, T> Vector<3, T>::toVector4() const
 {
 	return Vector<4, T>{data[0], data[1], data[2], 1};
 }
@@ -413,6 +413,7 @@ public:
 	static Vector<4, T> normalize(const Vector<4, T>& vec);
 	T dot(const Vector<4, T>& vec);
 	void normalize();
+	Vector<3, T> toVector3() const;
 };
 
 template<class T>
@@ -476,6 +477,11 @@ inline void Vector<4, T>::normalize()
 	for (int i = 0; i < 4; i++) {
 		(*this)[i] = (*this)[i] / length;
 	}
+}
+template<class T>
+inline Vector<3, T> Vector<4, T>::toVector3() const
+{
+	return Vector<3, T>{ data[0], data[1], data[2] };
 }
 #pragma endregion
 

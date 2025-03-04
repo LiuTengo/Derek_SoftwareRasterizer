@@ -104,12 +104,13 @@
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE_WINDOW;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -129,6 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Rendering\Private\Light.cpp" />
     <ClCompile Include="Source\Gameplay\Private\MeshObject.cpp" />
     <ClCompile Include="Source\Rendering\Private\Shader.cpp" />
     <ClCompile Include="Source\Rendering\Private\Material.cpp" />
@@ -139,8 +141,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Source\Gameplay\Private\Object.cpp" />
     <ClCompile Include="Source\Rendering\Private\Triangle.cpp" />
+    <ClCompile Include="Source\Rendering\Private\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Rendering\Light.h" />
     <ClInclude Include="Source\Gameplay\MeshObject.h" />
     <ClInclude Include="Source\ObjLoader\OBJ_Loader.h" />
     <ClInclude Include="Source\Rendering\Shader.h" />
@@ -153,7 +157,10 @@
     <ClInclude Include="Source\Gameplay\Scene.h" />
     <ClInclude Include="Source\Gameplay\Camera.h" />
     <ClInclude Include="Source\Gameplay\Object.h" />
+    <ClInclude Include="Source\Rendering\Shader\DefaultShader.hpp" />
     <ClInclude Include="Source\Rendering\Triangle.h" />
+    <ClInclude Include="Source\Rendering\Vertex.hpp" />
+    <ClInclude Include="Source\Rendering\Texture.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

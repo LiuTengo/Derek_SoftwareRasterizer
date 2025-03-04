@@ -2,7 +2,7 @@
 
 Scene::Scene()
 {
-	objectArray = std::vector<MeshObject *>(1, nullptr);
+	objectArray = std::vector<MeshObject *>(0, nullptr);
 }
 
 Scene::Scene(int maxObjectNum)
@@ -12,6 +12,13 @@ Scene::Scene(int maxObjectNum)
 
 Scene::~Scene()
 {
+}
+
+void Scene::Update(float tick)
+{
+	for (const auto& obj : objectArray) {
+		obj->Update(tick);
+	}
 }
 
 void Scene::AddObject(MeshObject* newObj)
@@ -24,13 +31,15 @@ void Scene::AddObject(MeshObject* newObj)
 void Scene::SetMainCamera(Camera mainCam)
 {
 	camera = std::make_unique<Camera>(mainCam);
+	RendererSettings::CameraDirection = camera->cameraDirection;
 }
 
-void Scene::SetRenderer(std::shared_ptr<Renderer> rend)
+void Scene::SetMainLight(Light mainLight)
 {
-	for (auto& obj : objectArray) {
-		obj->SetRenderer(rend);
-	}
+	light = std::make_unique<Light>(mainLight);
+	RendererSettings::LightColor = light->Color;
+	RendererSettings::LightPosition = light->Position;
+	RendererSettings::LightIntensity = light->Intensity;
 }
 
 Matrix4X4f Scene::GetVPMatrix()

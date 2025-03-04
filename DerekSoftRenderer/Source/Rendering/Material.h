@@ -8,17 +8,17 @@
 class Material
 {
 public:
-	Material(Shader shader);
+	Material()=default;
+	Material(Shader* shader);
 	~Material();
 
 public:
 	std::shared_ptr<Shader> shader;
-
-	VertexInput vertInput;
-	FragmentInput fragInput;
+	std::shared_ptr<Texture> texture;
 
 public:
-	void SetVertexInputData(const Triangle& triangle);
-	void ApplyVertexShader();
-	Vector3f ApplyFragmentShader();
+	FragmentInput ApplyVertexShader(const VertexInput& input);
+	Vector3f ApplyFragmentShader(FragmentInput& input);
+
+	void SetTexture(Texture* texture);
 };

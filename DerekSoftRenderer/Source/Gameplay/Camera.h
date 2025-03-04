@@ -18,15 +18,21 @@ public:
 	float aspectRatio;
 
 	Vector3f position;
-	Vector3f rotation;
+	//Vector3f rotation;
+	Vector3f lookTarget;
+
+	Vector3f cameraDirection;
+	Vector3f cameraUp;
+	Vector3f cameraRight;
 
 public:
 	Camera();
-	Camera(float far,float near,float fov,float eyeRatio);
+	Camera(Vector3f lookPoint, float far,float near,float fov,float eyeRatio);
 
 public:
 	Matrix4X4f GetProjectionMatrix(ProjectionType type = ProjectionType::Perspective) const;
 	Matrix4X4f GetViewMatrix() const;
 	Matrix4X4f GetVPMatrix() const;
+	float GetFarSubstractNear() const;
 };
 

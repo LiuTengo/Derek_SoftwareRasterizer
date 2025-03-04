@@ -1,5 +1,7 @@
 ﻿D:\ProgramFiles\VisualStudio\2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(DerekSoftRenderer.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
-  main.cpp
-E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\RendererSettings.h(8,2): warning C4091: “static ”: 没有声明变量时忽略“RendererSettings”的左侧
-E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\ObjLoader\OBJ_Loader.h(949,18): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  Texture.cpp
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Texture.cpp(15,10): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Texture.cpp(39,21): warning C4018: “<”: 有符号/无符号不匹配
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Texture.cpp(40,22): warning C4018: “<”: 有符号/无符号不匹配
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Texture.cpp(61,13): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
   DerekSoftRenderer.vcxproj -> E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\x64\Debug\DerekSoftwareRasterizer.exe

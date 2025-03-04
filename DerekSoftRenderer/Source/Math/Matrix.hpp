@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef DEREK_SOFTWARE_MATRIX_H
-#define DEREK_SOFTWARE_MATRIX_H
-
 #include <iostream>
 #include <array>
 
@@ -34,7 +31,10 @@ public:
 
 	template<int bCol>
 	Matrix<T, m, bCol> operator * (const Matrix<T, n, bCol>& mat);
+	template<int bCol>
+	Matrix<T, m, bCol> operator * (const Matrix<T, n, bCol>& mat) const;
 	Vector<m, T> operator * (const Vector<n, T>& vec);
+	Vector<m, T> operator * (const Vector<n, T>& vec) const;
 
 	std::array<T, n>& operator [](int index);
 	const std::array<T, n>& operator [](int index) const;
@@ -85,15 +85,9 @@ template<class T, int m, int n>
 inline Matrix<T, m, n> Matrix<T, m, n>::Identity()
 {
 	Matrix<T, m, n> res;
-	for (int i = 0; i < m;i++) {
-		for (int j = 0; j < n;j++) {
-			if (i==j) {
-				res[i][j] = 1;
-			}
-			else {
-				res[i][j] = 0;
-			}
-		}
+	int min = m<n ? m : n;
+	for (int i = 0; i < min;i++) {
+		res[i][i] = 1;
 	}
 	return res;
 }
@@ -187,7 +181,36 @@ inline Matrix<T, m, bCol> Matrix<T, m, n>::operator*(const Matrix<T, n, bCol>& m
 }
 
 template<class T, int m, int n>
+template<int bCol>
+inline Matrix<T, m, bCol> Matrix<T, m, n>::operator*(const Matrix<T, n, bCol>& mat) const
+{
+	Matrix<T, m, bCol> res = Matrix<T, m, bCol>();
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < bCol; j++) {
+			T sum = T();
+			for (int k = 0; k < n; k++) {
+				sum += data[i][k] * mat[k][j];
+			}
+			res[i][j] = sum;
+		}
+	}
+	return res;
+}
+
+template<class T, int m, int n>
 inline Vector<m, T> Matrix<T, m, n>::operator*(const Vector<n, T>& vec)
+{
+	Vector<m, T> res = Vector<m, T>();
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
+			res[i] += data[i][j] * vec[j];
+		}
+	}
+	return res;
+}
+
+template<class T, int m, int n>
+inline Vector<m, T> Matrix<T, m, n>::operator*(const Vector<n, T>& vec) const
 {
 	Vector<m, T> res = Vector<m, T>();
 	for (int i = 0; i < m; i++) {
@@ -280,5 +303,3 @@ typedef Matrix<float, 4, 4> Matrix4X4f;
 
 typedef Matrix<double, 3, 3> Matrix3X3d;
 typedef Matrix<double, 4, 4> Matrix4X4d;
-
-#endif // !DEREK_SOFTWARE_MATRIX_H

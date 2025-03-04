@@ -45,6 +45,12 @@
     <ClCompile Include="Source\Gameplay\Private\MeshObject.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Rendering\Private\Light.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Rendering\Private\Texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Gameplay\Object.h">
@@ -84,6 +90,18 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Source\ObjLoader\OBJ_Loader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Rendering\Shader\DefaultShader.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Rendering\Vertex.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Rendering\Light.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Rendering\Texture.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
