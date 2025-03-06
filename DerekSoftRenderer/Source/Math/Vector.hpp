@@ -360,13 +360,21 @@ public:
 		}
 		return res;
 	};
-	Vector<3, T> operator- (const Vector<3, T>& vec) {
-		Vector<3, T> res = Vector();
-		for (int i = 0; i < 3; i++) {
+	Vector<4, T> operator- (const Vector<4, T>& vec) {
+		Vector<4, T> res = Vector();
+		for (int i = 0; i < 4; i++) {
 			res[i] = data[i] - vec[i];
 		}
 		return res;
 	};
+	Vector<4, T> operator- (const Vector<4, T>& vec) const{
+		Vector<4, T> res = Vector();
+		for (int i = 0; i < 4; i++) {
+			res[i] = data[i] - vec[i];
+		}
+		return res;
+	};
+
 	Vector<4, T> operator* (const Vector<4, T>& vec) {
 		Vector<4, T> res = Vector();
 		for (int i = 0; i < 4; i++) {

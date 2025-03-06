@@ -7,7 +7,7 @@
 #include "Camera.h"
 #include "../Rendering/Light.h"
 
-class Renderer;
+class Light;
 
 class Scene
 {
@@ -25,7 +25,7 @@ public:
 	void AddObject(MeshObject* newObj);
 	void SetMainCamera(Camera mainCam);
 	void SetMainLight(Light mainLight);
-	void SetRenderer(std::shared_ptr<Renderer> rend);
+	
 	Matrix4X4f GetVPMatrix();
 };
 

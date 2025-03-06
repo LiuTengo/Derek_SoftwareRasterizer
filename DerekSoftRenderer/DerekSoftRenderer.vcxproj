@@ -130,6 +130,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\SubClass\Private\RotateObject.cpp" />
+    <ClCompile Include="Source\SubClass\Private\Plane.cpp" />
     <ClCompile Include="Source\Rendering\Private\Light.cpp" />
     <ClCompile Include="Source\Gameplay\Private\MeshObject.cpp" />
     <ClCompile Include="Source\Rendering\Private\Shader.cpp" />
@@ -144,6 +146,8 @@
     <ClCompile Include="Source\Rendering\Private\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\SubClass\RotateObject.h" />
+    <ClInclude Include="Source\SubClass\Plane.h" />
     <ClInclude Include="Source\Rendering\Light.h" />
     <ClInclude Include="Source\Gameplay\MeshObject.h" />
     <ClInclude Include="Source\ObjLoader\OBJ_Loader.h" />

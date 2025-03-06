@@ -46,9 +46,9 @@ struct FragmentInput {
 	Vector3f worldPosition;
 	Vector3f worldNormal;
 	Vector2f uv;
-	std::shared_ptr<Texture> texture;
+	std::shared_ptr<Texture> baseColor;
 
-	void SetTexture(std::shared_ptr<Texture> tex) {
-		texture = tex;
+	void SetBaseColorTexture(std::shared_ptr<Texture> tex) {
+		baseColor = tex;
 	}
 };

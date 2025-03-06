@@ -51,6 +51,12 @@
     <ClCompile Include="Source\Rendering\Private\Texture.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Source\SubClass\Private\Plane.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SubClass\Private\RotateObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Gameplay\Object.h">
@@ -102,6 +108,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Source\Rendering\Texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SubClass\Plane.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SubClass\RotateObject.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

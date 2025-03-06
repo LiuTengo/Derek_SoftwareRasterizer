@@ -12,6 +12,10 @@ Scene::Scene(int maxObjectNum)
 
 Scene::~Scene()
 {
+	for (auto& objPtr : objectArray) {
+		delete objPtr;
+		objPtr = nullptr;
+	}
 }
 
 void Scene::Update(float tick)

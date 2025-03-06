@@ -22,6 +22,7 @@ public:
 	void SetPointColor(int index, const Vector2f& uv);
 	void SetVerticesData(int index, const Vector4f& pos, const Vector3f& norm, const Vector2f& uv);
 	void SetVertexData(int index,const FragmentInput& fragInput);
+	Vector3f GetTriangleNormal() const;
 	std::array<Vector4f,3> toVector4() const;
 };
 

@@ -33,8 +33,7 @@ MeshObject::~MeshObject()
 
 void MeshObject::Update(float dt)
 {
-	float offsetAngle = dt * 30.0f;
-	rotation.y() = rotation.y()+offsetAngle;
+
 }
 
 void MeshObject::SetLocation(const Vector3f& newPos)
@@ -71,12 +70,13 @@ Matrix4X4f MeshObject::GetModelMatrix() const
 		{0,0,scale.z(),0},
 		{0,0,0,1}
 	};
-	float sa = sin(rotation.x());
-	float sb = sin(rotation.y());
-	float sc = sin(rotation.z());
-	float ca = cos(rotation.x());
-	float cb = cos(rotation.y());
-	float cc = cos(rotation.z());
+	Vector3f ratio = PI * rotation / 180.0f;
+	float sa = sin(ratio.x());
+	float sb = sin(ratio.y());
+	float sc = sin(ratio.z());
+	float ca = cos(ratio.x());
+	float cb = cos(ratio.y());
+	float cc = cos(ratio.z());
 	//Notie: 可能会出错?
 	//Fixme: 使用四元数旋转
 	Matrix4X4f rotationM = {
@@ -86,7 +86,7 @@ Matrix4X4f MeshObject::GetModelMatrix() const
 		{0,0,0,1}
 	};
 
-	return translateM * rotationM * scaleM;
+	return   scaleM * rotationM * translateM;
 }
 
 void MeshObject::SetMaterial(Material* mat)
@@ -131,18 +131,16 @@ void MeshObject::LoadModelFromObj(const std::string& filePath)
 	if (loader.LoadFile(filePath)) {
 		auto mesh = loader.LoadedMeshes[0];
 
-		triangleList.resize(mesh.Vertices.size() / 3);
-
-		for (int i = 0; i < mesh.Vertices.size(); i += 3) {
+		for (int i = 0; i < mesh.Indices.size()-2; i += 3) {
 			Triangle* t = new Triangle();
 			for (int j = 0; j < 3; j++) {
-				auto v = mesh.Vertices[i + j];
+				auto v = mesh.Vertices[mesh.Indices[i + j]];
 				t->SetVerticesData(j,
-					Vector4f{ v.Position.X , v.Position.Y , v.Position.Z ,1 },
+					Vector4f{ v.Position.X , v.Position.Y , v.Position.Z ,1 },//模型是右手坐标系
 					Vector3f{ v.Normal.X , v.Normal.Y , v.Normal.Z },
 					Vector2f{ v.TextureCoordinate.X,v.TextureCoordinate.Y });
 			}
-			triangleList[i / 3] = t;
+			triangleList.push_back(t);
 		}
 	}
 	else {

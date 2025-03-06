@@ -3,6 +3,8 @@
 #include <windows.h>
 #include <iostream>
 
+#include "Source/SubClass/RotateObject.h"
+#include "Source/SubClass/Plane.h"
 #include "Source/Rendering/Shader/DefaultShader.hpp"
 #include "Source/Rendering/Renderer.h"
 
@@ -11,28 +13,42 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 std::shared_ptr<Renderer> renderer;
 Scene* scene;
+BITMAPINFO bmi;
 
 void InitData() {
     renderer = std::make_shared<Renderer>();
     scene = new Scene();
 
-    Texture* text = new Texture(".//Content//Model//spot//spot_texture.png");
+    Texture* spotText = new Texture(".//Content//Model//spot//spot_texture.png");
 
     Shader* simpleShader = new DefaultShader();
-    Material* box_mat = new Material(simpleShader);
-    box_mat->SetTexture(text);
+    Material* spot_mat = new Material(simpleShader);
+    spot_mat->SetTexture(spotText);
 
-    MeshObject* box = new MeshObject("./Content/Model/spot/spot_triangulated_good.obj",box_mat);// "./Content/Model/box_stack.obj"
-    
-    //box->SetLocation(Vector3f{0.0,0.0,0.0f});
-    box->SetRotation(Vector3f{0.0f,45.0f,0.0f});
-    box->SetScale(Vector3f{2.f,2.f,2.f});
+    Material* plane_mat = new Material(simpleShader);
+
+    Plane* plane = new Plane("./Content/Model/plane.obj", plane_mat);
+    plane->SetLocation(Vector3f{ 0.0f,0.0,0.0f });
+
+    RotateObject* box = new RotateObject("./Content/Model/spot/spot_triangulated_good.obj",spot_mat);
+    // "./Content/Model/box_stack.obj"
+    // "./Content/Model/spot/spot_triangulated_good.obj"
+    box->SetRotation(Vector3f{0.0f,145.0f,0.0f});
 
     Camera camera = Camera();
     Light light = Light();
     scene->SetMainCamera(camera);
     scene->SetMainLight(light);
     scene->AddObject(box);
+    scene->AddObject(plane);
+
+    bmi = { 0 };
+    bmi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
+    bmi.bmiHeader.biWidth = RendererSettings::WINDOW_WIDTH;
+    bmi.bmiHeader.biHeight = -RendererSettings::WINDOW_HEIGHT; // 负值表示顶部为起点 (防止上下翻转)
+    bmi.bmiHeader.biPlanes = 1;
+    bmi.bmiHeader.biBitCount = 24;  // 24-bit BGR
+    bmi.bmiHeader.biCompression = BI_RGB;  // 无压缩
 }
 
 void OnCloseWindow() {
@@ -47,7 +63,13 @@ void Draw(const HDC& hdc,const std::shared_ptr<Renderer>& renderer) {
     HBITMAP bmp = CreateCompatibleBitmap(hdc, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT);
     SelectObject(mdc,bmp);
     //在缓冲区进行绘制
-    renderer->Draw(mdc,scene);
+    renderer->Draw(mdc,scene->objectArray,scene->camera);
+    //将每帧buffer写入HDC
+    renderer->CopyFrameBufferToHDC(mdc);
+    //scene->light->SetShadwMap(scene->objectArray, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT);
+    //StretchDIBits(mdc, 0, 0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,
+    //   0, 0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,
+    //    scene->light->ShadowMap.data(), &bmi, DIB_RGB_COLORS, SRCCOPY);
     //复制到DC
     BitBlt(hdc,0,0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,mdc,0,0,SRCCOPY);
     //释放缓冲区
@@ -73,7 +95,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
     HWND hwnd = CreateWindowEx(
         0,                              // Optional window styles.
         CLASS_NAME,                     // Window class
-        L"Learn to Program Windows",    // Window text
+        L"Derek Software Raterizer",    // Window text
         WS_OVERLAPPEDWINDOW,            // Window style
 
         // Size and position
@@ -95,8 +117,8 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
     InitData();
 
     // Run the message loop.
-    MSG msg = { };
-    while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
+    MSG msg = {};
+    while (GetMessage(&msg, NULL, 0, 0)) {
         if (msg.message == WM_QUIT) { 
             return 0;
         }
@@ -131,12 +153,6 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
             InvalidateRect(hwnd, NULL, TRUE);	// 让窗口变为无效,从而触发重绘消息
         }
         break;
-    //case WM_SIZE:
-    //    RendererSettings::RENDER_TARGET_HEIGHT = HIWORD(lParam);
-    //    RendererSettings::RENDER_TARGET_WIDTH = LOWORD(lParam);
-    //    break;
-    case WM_ERASEBKGND:		// 不擦除背景,避免闪烁
-        return 1;
     case WM_PAINT:
     {
         PAINTSTRUCT ps;

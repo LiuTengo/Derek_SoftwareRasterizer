@@ -12,7 +12,7 @@ public:
 public:
 	static Matrix4X4f v;
 	static Matrix4X4f vp;
-	static Matrix4X4f mv;
+	static Matrix4X4f m;
 	static Matrix4X4f mvp;
 
 public:

@@ -23,14 +23,15 @@ private:
 public:
 	void ClearDepth();
 	void ClearColor();
-	bool IsInTriangle(const Triangle& t,float x,float y);
+	static bool IsInTriangle(const Triangle& t,float x,float y);
+	static std::tuple<float, float, float> ComputeBarycentricCoordinate(float x, float y, const Vertex* v);
 	//ªÊ÷∆√¸¡Ó
-	void Draw(const HDC& hdc,Scene* scene = nullptr);
+	void Draw(const HDC& hdc,const std::vector<MeshObject*>& objArray,const std::unique_ptr<Camera>& camera);
 
 	//π‚’§ªØ
 	void Rasterize(MeshObject* obj,Triangle triangle);
 
-	void CopyBufferToHDC(const HDC& hdc);
+	void CopyFrameBufferToHDC(const HDC& hdc);
 private:
 	int GetBufferIndex(int x, int y);
 	Vector2f Interpolate(float alpha, float beta, float gamma, const Vector2f& v1, const Vector2f& v2, const Vector2f& v3, float weight = 1);
@@ -39,5 +40,4 @@ private:
 	bool DepthTest(const int& index, const float& depth);
 	Vector3f Clamp(const Vector3f& vec);
 	void SetFrameBuffer(int index,const Vector3f& res);
-	std::tuple<float, float, float> ComputeBarycentricCoordinate(float x, float y, const Vertex* v);
 };

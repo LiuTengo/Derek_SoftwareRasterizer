@@ -16,7 +16,7 @@ FragmentInput Material::ApplyVertexShader(const VertexInput& input)
 
 Vector3f Material::ApplyFragmentShader(FragmentInput& input)
 {
-	input.SetTexture(texture);
+	input.SetBaseColorTexture(texture);
 	return shader->FragmentShader(input);
 }
 

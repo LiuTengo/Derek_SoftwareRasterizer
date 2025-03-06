@@ -41,6 +41,13 @@ void Triangle::SetVertexData(int index, const FragmentInput& fragInput)
     vertices[index].normal = fragInput.worldNormal;
 }
 
+Vector3f Triangle::GetTriangleNormal() const
+{
+    Vector3f v21 = (vertices[0].clipPoints - vertices[1].clipPoints).toVector3();
+    Vector3f v32 = (vertices[2].clipPoints - vertices[1].clipPoints).toVector3();
+    return v21.cross(v32);
+}
+
 std::array<Vector4f, 3> Triangle::toVector4() const
 {
     std::array<Vector4f, 3> res;

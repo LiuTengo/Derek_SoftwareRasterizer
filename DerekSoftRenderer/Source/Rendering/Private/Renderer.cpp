@@ -55,24 +55,19 @@ bool Renderer::IsInTriangle(const Triangle& t, float x, float y)
 	else return false;
 }
 
-void Renderer::Draw(const HDC& hdc, Scene* scene)
+void Renderer::Draw(const HDC& hdc, const std::vector<MeshObject*>& objArray, const std::unique_ptr<Camera>& camera)
 {
-	if (scene == nullptr) {
-		return;
-	}
 	//更新VP矩阵
-	RendererSettings::vp = scene->GetVPMatrix();
+	RendererSettings::vp = camera->GetVPMatrix();
 
-	float f1 = (50 - 0.1) / 2.0;
-	float f2 = (50 + 0.1) / 2.0;
 	//清除Buffer
 	ClearDepth();
 	ClearColor();
 
-	for(auto obj : scene->objectArray) {
+	for(auto obj : objArray) {
 
-		RendererSettings::mv = scene->camera->GetViewMatrix() * obj->GetModelMatrix();
-		RendererSettings::mvp = scene->GetVPMatrix()*obj->GetModelMatrix();
+		RendererSettings::m = obj->GetModelMatrix();
+		RendererSettings::mvp = RendererSettings::vp * RendererSettings::m;
 
 		for (const auto& triangle : obj->triangleList) {
 
@@ -91,7 +86,7 @@ void Renderer::Draw(const HDC& hdc, Scene* scene)
 				//Viewport Transformation
 				v.clipPosition.x() = (v.clipPosition.x() * 0.5 + 0.5) * RendererSettings::WINDOW_WIDTH;
 				v.clipPosition.y() = (v.clipPosition.y() * 0.5 + 0.5) * RendererSettings::WINDOW_HEIGHT;//0.5 * RendererSettings::WINDOW_HEIGHT * (v.clipPosition.y() + 1);
-				v.clipPosition.z() = (v.clipPosition.z() - 0.1f) / (scene->camera->GetFarSubstractNear());//(v.clipPosition.z()*f1+f2);
+				v.clipPosition.z() = (v.clipPosition.z() - 0.1f) / (camera->GetFarSubstractNear());//(v.clipPosition.z()*f1+f2);
 			}
 
 			for (int i = 0; i < 3;i++) {
@@ -102,16 +97,16 @@ void Renderer::Draw(const HDC& hdc, Scene* scene)
 			Rasterize(obj, newTri);
 		}
 	}
-	
-	//将每帧buffer写入HDC,可优化
-	CopyBufferToHDC(hdc); 
-
-
-
 }
 
 void Renderer::Rasterize(MeshObject* obj,Triangle triangle)
 {
+	//cull back face
+	//Vector3f triNormal = triangle.GetTriangleNormal();
+	//if (triNormal.dot(RendererSettings::CameraDirection) < 0) {
+	//	return;
+	//}
+
 	auto v = triangle.toVector4();
 
 	float xMaxf = 0;
@@ -159,7 +154,7 @@ void Renderer::Rasterize(MeshObject* obj,Triangle triangle)
 	}
 }
 
-void Renderer::CopyBufferToHDC(const HDC& hdc)
+void Renderer::CopyFrameBufferToHDC(const HDC& hdc)
 {
 	StretchDIBits(hdc, 0, 0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,
 		0, 0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,
@@ -168,8 +163,8 @@ void Renderer::CopyBufferToHDC(const HDC& hdc)
 
 int Renderer::GetBufferIndex(int x,int y)
 {
-	return y * RendererSettings::WINDOW_WIDTH + x;
-	//return (RendererSettings::WINDOW_HEIGHT - y)* RendererSettings::WINDOW_WIDTH + x;
+	//return y * RendererSettings::WINDOW_WIDTH + x;
+	return (RendererSettings::WINDOW_HEIGHT - y)* RendererSettings::WINDOW_WIDTH + x;
 }
 
 Vector2f Renderer::Interpolate(float alpha, float beta, float gamma, const Vector2f& v1, const Vector2f& v2, const Vector2f& v3, float weight)

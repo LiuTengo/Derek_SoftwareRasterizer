@@ -19,10 +19,10 @@ inline float DefaultShader::Clamp(float val)
 inline FragmentInput DefaultShader::VertexShader(const VertexInput& input) {
 	FragmentInput o;
 	o.clipPosition = RendererSettings::mvp * input.modelPosition;
-	Vector4f temp = (RendererSettings::mv * input.modelPosition);
+	Vector4f temp = (RendererSettings::m * input.modelPosition);
 	o.worldPosition = Vector3f{ temp.x(),temp.y(),temp.z()};
 	Vector4f normTemp = input.normal.toVector4();
-	Vector4f worldNorm = (RendererSettings::mv * normTemp);
+	Vector4f worldNorm = (RendererSettings::m * normTemp);
 	o.worldNormal = worldNorm.toVector3();
 	return o;
 }
@@ -30,11 +30,11 @@ inline FragmentInput DefaultShader::VertexShader(const VertexInput& input) {
 inline Vector3f DefaultShader::FragmentShader(const FragmentInput& input)
 {
 	Vector3f defCol = Vector3f{ 1.0f,0.6f,0.0f };
-	if (input.texture != nullptr) {
-		defCol = input.texture->Sample(input.uv);
+	if (input.baseColor != nullptr) {
+		defCol = input.baseColor->Sample(input.uv);
 	}
 	else {
-		defCol = Vector3f{ 1.0f,0.6f,0.0f };
+		defCol = Vector3f{ 1.0f,1.0f,1.0f };
 	}
 	
 	Vector3f Normal = Vector3f::normalize(input.worldNormal);
