@@ -35,4 +35,8 @@ double RendererSettings::LightDepth(double z)
 {
 	double inv_z = 1. / z;
 	return inv_z * ((RendererSettings::lightNearPlane - z) * RendererSettings::lightFarPlane) / (RendererSettings::lightNearPlane - RendererSettings::lightFarPlane);
+	//return (RendererSettings::lightFarPlane * RendererSettings::lightNearPlane) / (RendererSettings::lightFarPlane - (RendererSettings::lightFarPlane - RendererSettings::lightNearPlane) * z);
+	//float f1 = (RendererSettings::lightFarPlane - RendererSettings::lightNearPlane) / 2;
+	//float f2 = (RendererSettings::lightFarPlane + RendererSettings::lightNearPlane) / 2;
+	//return  z * f1 + f2;
 }

@@ -2,10 +2,10 @@
 
 Light::Light()
 {
-	Position = Vector3f{8,10,5};
-	Direction = Vector3f::normalize(Vector3f{0,0,-7} - Position);
+	Position = Vector3f{ 7,5,5 }; 
+	Direction = Vector3f::normalize(Vector3f{ 0,0,0 } - Position),
 	Color = Vector3f{1,1,1};
-	Intensity = 1.0f;
+	Intensity = 0.8f;
 	ShadowMapHeight = 0;
 	ShadowMapWidth = 0;
 }
@@ -19,15 +19,16 @@ void Light::SetShadwMap(const std::vector<MeshObject*>& objList, int width, int 
 	RendererSettings::ShadowMapHeight = height;
 
 	depthBuffer = std::vector<float>(width*height,std::numeric_limits<float>::infinity());
-	ShadowMap = std::vector<BYTE>(width * height*3,BYTE());
-	RendererSettings::ShadowMap = std::vector<double>(width * height, 1.0);
+	ShadowMap = std::vector<BYTE>(width * height*3,BYTE(0));
+	RendererSettings::ShadowMap = std::vector<double>(width * height, std::numeric_limits<double>::infinity());
+
 
 	std::unique_ptr<Camera> virtualCamera = std::make_unique<Camera>
-		(Camera(Position,Direction,15.0f,0.1f, 60.0f,(float)width / (float)height));
+		(Camera(Position, Vector3f{ 0,0,0 },30.0f,0.1f, 60.0f,(float)width / (float)height));
 
-	RendererSettings::lightVP = virtualCamera->GetProjectionMatrix()* virtualCamera->GetViewMatrix();
 	RendererSettings::lightFarPlane = virtualCamera->farPlane;
 	RendererSettings::lightNearPlane = virtualCamera->nearPlane;
+	RendererSettings::lightVP = virtualCamera->GetProjectionMatrix()* virtualCamera->GetViewMatrix();
 
 	//Render ShadowMap
 	for (auto obj : objList) {
@@ -50,8 +51,8 @@ void Light::SetShadwMap(const std::vector<MeshObject*>& objList, int width, int 
 				v.clipPosition = v.clipPosition / (v.clipPosition.w());
 				//Viewport Transformation
 				v.clipPosition.x() = (v.clipPosition.x() * 0.5 + 0.5) * ShadowMapWidth;
-				v.clipPosition.y() = (v.clipPosition.y() * 0.5 + 0.5) * ShadowMapHeight;//0.5 * RendererSettings::WINDOW_HEIGHT * (v.clipPosition.y() + 1);
-				v.clipPosition.z() = (v.clipPosition.z() - virtualCamera->GetNearPlane()) / (virtualCamera->GetFarSubstractNear());
+				v.clipPosition.y() = (v.clipPosition.y() * 0.5 + 0.5) * ShadowMapHeight;
+				v.clipPosition.z() = virtualCamera->GetNonLinearDepth(v.clipPosition.z());
 			}
 
 			//–¥»ÎShadowMap
@@ -61,9 +62,9 @@ void Light::SetShadwMap(const std::vector<MeshObject*>& objList, int width, int 
 			auto v = newTri.toVector4();
 
 			float xMaxf = 0;
-			float xMinf = RendererSettings::WINDOW_WIDTH;
+			float xMinf = RendererSettings::ShadowMapWidth;
 			float yMaxf = 0;
-			float yMinf = RendererSettings::WINDOW_HEIGHT;
+			float yMinf = RendererSettings::ShadowMapHeight;
 
 			for (int i = 0; i < 3; i++) {
 				xMaxf = max(newTri.vertices[i].clipPoints.x(), xMaxf);
@@ -74,11 +75,11 @@ void Light::SetShadwMap(const std::vector<MeshObject*>& objList, int width, int 
 
 			//Clamp
 			int xMax = ceil(xMaxf);
-			xMax = xMax > RendererSettings::WINDOW_WIDTH ? RendererSettings::WINDOW_WIDTH : xMax;
+			xMax = xMax > RendererSettings::ShadowMapWidth ? RendererSettings::ShadowMapWidth : xMax;
 			int xMin = floor(xMinf);
 			xMin = xMin < 0 ? 0 : xMin;
 			int yMax = ceil(yMaxf);
-			yMax = yMax > RendererSettings::WINDOW_HEIGHT ? RendererSettings::WINDOW_HEIGHT : yMax;
+			yMax = yMax > RendererSettings::ShadowMapHeight ? RendererSettings::ShadowMapHeight : yMax;
 			int yMin = floor(yMinf);
 			yMin = yMin < 0 ? 0 : yMin;
 
@@ -92,15 +93,14 @@ void Light::SetShadwMap(const std::vector<MeshObject*>& objList, int width, int 
 						float z_interpolated = alpha * v[0].z() / v[0].w() + beta * v[1].z() / v[1].w() + gamma * v[2].z() / v[2].w();
 						z_interpolated *= w_reciprocal;
 
-						int index = (ShadowMapHeight - y - 1) * ShadowMapWidth + x;;
+						int index = (ShadowMapHeight - y - 1) * ShadowMapWidth + x;
 						if (depthBuffer[index] > z_interpolated) {
 							depthBuffer[index] = z_interpolated;
-							double num = virtualCamera->GetNonLinearDepth((double)z_interpolated);
 
-							ShadowMap[index*3 + 0] = num * 255;
-							ShadowMap[index*3 + 1] = num * 255;
-							ShadowMap[index*3 + 2] = num * 255;
-							RendererSettings::ShadowMap[index] = num;
+							ShadowMap[index*3 + 0] = z_interpolated * 255;
+							ShadowMap[index*3 + 1] = z_interpolated * 255;
+							ShadowMap[index*3 + 2] = z_interpolated * 255;
+							RendererSettings::ShadowMap[index] = z_interpolated;
 						}
 					}
 				}

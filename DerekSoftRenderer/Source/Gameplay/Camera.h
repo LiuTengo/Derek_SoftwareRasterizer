@@ -19,7 +19,6 @@ public:
 	float aspectRatio;
 
 	Vector3f position;
-	//Vector3f rotation;
 	Vector3f lookTarget;
 
 	Vector3f cameraDirection;
@@ -28,7 +27,7 @@ public:
 
 public:
 	Camera();
-	Camera(const Vector3f& position,const Vector3f& lookPoint, float far,float near,float fov,float eyeRatio);
+	Camera(const Vector3f& position,const Vector3f& lookPoin, float far,float near,float fov,float eyeRatio);
 
 public:
 	Matrix4X4f GetProjectionMatrix(ProjectionType type = ProjectionType::Perspective) const;
@@ -37,6 +36,7 @@ public:
 	float GetFarSubstractNear() const;
 	float GetNearPlane() const;
 	double GetNonLinearDepth(double z) const;
+	double GetLinearDepth(double z) const;
 	//void Update(float dt);
 	//void SetCameraMoveVelocity(MoveDirection direction);
 	//void SetCameraRotateVelocity();

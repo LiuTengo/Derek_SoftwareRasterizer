@@ -86,8 +86,7 @@ void Renderer::Draw(const HDC& hdc, const std::vector<MeshObject*>& objArray, co
 				//Viewport Transformation
 				v.clipPosition.x() = (v.clipPosition.x() * 0.5 + 0.5) * RendererSettings::WINDOW_WIDTH;
 				v.clipPosition.y() = (v.clipPosition.y() * 0.5 + 0.5) * RendererSettings::WINDOW_HEIGHT;//0.5 * RendererSettings::WINDOW_HEIGHT * (v.clipPosition.y() + 1);
-				//v.clipPosition.z() = (v.clipPosition.z() - camera->GetNearPlane()) / (camera->GetFarSubstractNear());//线性空间，需更新为非线性空间
-				//v.clipPosition.z() = camera->GetNonLinearDepth(v.clipPosition.z());
+				v.clipPosition.z() = camera->GetNonLinearDepth(v.clipPosition.z());
 			}
 
 			for (int i = 0; i < 3;i++) {

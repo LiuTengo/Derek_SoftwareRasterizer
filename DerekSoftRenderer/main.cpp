@@ -29,7 +29,8 @@ void InitData() {
     Material* plane_mat = new Material(simpleShader);
 
     Plane* plane = new Plane("./Content/Model/plane.obj", plane_mat);
-    plane->SetLocation(Vector3f{ 0.0f,-0.75f,0.0f });
+    plane->SetScale(Vector3f{ 0.5f,0.5f,0.5f });
+    plane->SetLocation(Vector3f{ 0.0f,-1.5f,0.0f });
 
     RotateObject* box = new RotateObject("./Content/Model/spot/spot_triangulated_good.obj",spot_mat);
     // "./Content/Model/box_stack.obj"
@@ -66,12 +67,12 @@ void Draw(const HDC& hdc,const std::shared_ptr<Renderer>& renderer) {
 
     scene->light->SetShadwMap(scene->objectArray, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT);
     //在缓冲区进行绘制
-    //renderer->Draw(mdc,scene->objectArray,scene->camera);
+    renderer->Draw(mdc,scene->objectArray,scene->camera);
     //将每帧buffer写入HDC
-    //renderer->CopyFrameBufferToHDC(mdc);
-    StretchDIBits(mdc, 0, 0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,
-       0, 0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,
-        scene->light->ShadowMap.data(), &bmi, DIB_RGB_COLORS, SRCCOPY);
+    renderer->CopyFrameBufferToHDC(mdc);
+    //StretchDIBits(mdc, 0, 0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,
+    //   0, 0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,
+    //    scene->light->ShadowMap.data(), &bmi, DIB_RGB_COLORS, SRCCOPY);
     //复制到DC
     BitBlt(hdc,0,0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,mdc,0,0,SRCCOPY);
     //释放缓冲区

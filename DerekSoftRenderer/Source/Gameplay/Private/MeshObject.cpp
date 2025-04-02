@@ -77,8 +77,6 @@ Matrix4X4f MeshObject::GetModelMatrix() const
 	float ca = cos(ratio.x());
 	float cb = cos(ratio.y());
 	float cc = cos(ratio.z());
-	//Notie: 可能会出错?
-	//Fixme: 使用四元数旋转
 	Matrix4X4f rotationM = {
 		{cc * cb,cc * sb * sa - sc * ca,sc * sa + cc * sb * ca,0},
 		{sc * cb,cc * ca + sb * sc * sa,sc * sb * ca - cc * sa,0},

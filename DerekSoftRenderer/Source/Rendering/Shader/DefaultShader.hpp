@@ -49,37 +49,29 @@ inline Vector3f DefaultShader::FragmentShader(const FragmentInput& input)
 	Vector3f viewDir = Vector3f::normalize(RendererSettings::CameraPosition - input.worldPosition);
 	Vector3f halfDirection = Vector3f::normalize((viewDir + lightDir));
 
-	Vector3f specular = (pow(Clamp(halfDirection.dot(Normal)), 40) * RendererSettings::LightIntensity)*RendererSettings::LightColor;
-
-
+	Vector3f specular = (pow(Clamp(halfDirection.dot(Normal)), 20) * RendererSettings::LightIntensity)*RendererSettings::LightColor;
 
 	//add shadow
-	Matrix4X4f lightViewPort = Matrix4X4f{
-		{(float)RendererSettings::ShadowMapWidth *0.5f,0,0,(float)RendererSettings::ShadowMapWidth * 0.5f},
-		{0,(float)RendererSettings::ShadowMapHeight * 0.5f,0,(float)RendererSettings::ShadowMapHeight * 0.5f},
-		{0,0,1,0},
-		{0,0,0,1}
-	};
 	Vector4f lightCoord = RendererSettings::GetLightCoordinate(input.worldPosition);
-	lightCoord = lightViewPort * lightCoord;
-	//lightCoord.z() = RendererSettings::LightDepth((double)lightCoord.z());
-
+	lightCoord.x() = (float)RendererSettings::ShadowMapWidth * (0.5 * lightCoord.x() + 0.5);
+	lightCoord.y() = (float)RendererSettings::ShadowMapHeight * (0.5 * lightCoord.y() + 0.5);
+	lightCoord.z() = RendererSettings::LightDepth((double)lightCoord.z());
+	
 	// 转换到阴影贴图坐标
 	int x = floor(lightCoord.x());
 	int y = floor(lightCoord.y());
-	float testDepth = 0.0f;
 	if (0 <= x && x < RendererSettings::ShadowMapWidth &&
 		0 <= y && y < RendererSettings::ShadowMapHeight) {
-		int index = //x + (RendererSettings::ShadowMapHeight - (int)lightCoord.y() -1)* RendererSettings::ShadowMapWidth;
-		y * RendererSettings::ShadowMapWidth + x;
-
+		int index = x + (RendererSettings::ShadowMapHeight - y -1)* RendererSettings::ShadowMapWidth;
+	
 		double shadowDepth = RendererSettings::ShadowMap[index];
-		if (lightCoord.z() > shadowDepth) {
-			diffuse *= 0.5f;
-			testDepth = 0.5f;
+		if (shadowDepth != std::numeric_limits<double>::infinity()) {
+			if (lightCoord.z() > shadowDepth + 0.00033f) {
+				diffuse *= 0.5f;
+			}
 		}
 	}
 	
-	Vector3f res =  Vector3f{ (float)testDepth };//diffuse + specular + ambient;
+	Vector3f res = (diffuse + specular + ambient);
 	return res;
 }

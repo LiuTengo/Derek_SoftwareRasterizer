@@ -7,7 +7,20 @@
       "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Private\\Light.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProgramFiles\\VisualStudio\\2022\\VC\\Tools\\MSVC\\14.34.31933\\include\\memory||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Shader\\DefaultShader.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Shader\\DefaultShader.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Gameplay\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\RendererSettings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Private\\RendererSettings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Math\\Vector.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -18,83 +31,60 @@
       "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Gameplay\\Private\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Gameplay\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Light.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Light.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Shader\\DefaultShader.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Shader\\DefaultShader.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Enum\\CameraControllEnum.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Enum\\CameraControllEnum.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Material.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Material.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\MeshObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Gameplay\\MeshObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\Material.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Private\\Material.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Math\\Matrix.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Math\\Matrix.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\SubClass\\Private\\Plane.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\SubClass\\Private\\Plane.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Private\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProgramFiles\\VisualStudio\\2022\\VC\\Tools\\MSVC\\14.34.31933\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\SubClass\\Plane.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\SubClass\\Plane.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Gameplay\\Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Private\\MeshObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Gameplay\\Private\\MeshObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\RendererSettings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\RendererSettings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\RendererSettings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\RendererSettings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\SubClass\\Plane.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\SubClass\\Plane.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\RendererSettings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Private\\RendererSettings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Math\\Matrix.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Math\\Matrix.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\SubClass\\Private\\RotateObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\SubClass\\Private\\RotateObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Material.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Material.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\Triangle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Private\\Triangle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\Material.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Private\\Material.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Enum\\CameraControllEnum.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Enum\\CameraControllEnum.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Private\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Private\\MeshObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Gameplay\\Private\\MeshObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Light.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Light.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\MeshObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Gameplay\\MeshObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Private\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Gameplay\\Private\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Gameplay\\Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\Texture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -105,8 +95,22 @@
       "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Private\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Private\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Gameplay\\Private\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\SubClass\\Private\\Plane.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\SubClass\\Private\\Plane.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\SubClass\\Private\\RotateObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\SubClass\\Private\\RotateObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProgramFiles\\VisualStudio\\2022\\VC\\Tools\\MSVC\\14.34.31933\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProgramFiles\\VisualStudio\\2022\\VC\\Tools\\MSVC\\14.34.31933\\include\\memory||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\Triangle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Private\\Triangle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -127,16 +131,12 @@
     {
       "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Triangle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Triangle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2A0D409B-347F-4E33-82E1-2329E9244168}|DerekSoftRenderer\\DerekSoftRenderer.vcxproj|solutionrelative:DerekSoftRenderer\\Source\\Rendering\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 145,
+      "VerticalTabListWidth": 303,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
@@ -148,42 +148,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 25,
               "Title": "vector",
               "DocumentMoniker": "D:\\ProgramFiles\\VisualStudio\\2022\\VC\\Tools\\MSVC\\14.34.31933\\include\\vector",
               "ToolTip": "D:\\ProgramFiles\\VisualStudio\\2022\\VC\\Tools\\MSVC\\14.34.31933\\include\\vector",
-              "ViewState": "AgIAAJAHAAAAAAAAAAAWwJsHAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAI8HAAAAAAAAAAAiwJsHAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-03-31T03:11:44.422Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 26,
               "Title": "memory",
               "DocumentMoniker": "D:\\ProgramFiles\\VisualStudio\\2022\\VC\\Tools\\MSVC\\14.34.31933\\include\\memory",
               "ToolTip": "D:\\ProgramFiles\\VisualStudio\\2022\\VC\\Tools\\MSVC\\14.34.31933\\include\\memory",
               "ViewState": "AgIAAGQEAAAAAAAAAAAiwHAEAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-11T15:01:05.614Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T15:01:05.614Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "CameraControllEnum.hpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Enum\\CameraControllEnum.hpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Enum\\CameraControllEnum.hpp",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Enum\\CameraControllEnum.hpp",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Enum\\CameraControllEnum.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-03-07T02:05:52.302Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "RotateObject.cpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\SubClass\\Private\\RotateObject.cpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\SubClass\\Private\\RotateObject.cpp",
@@ -191,11 +190,12 @@
               "RelativeToolTip": "DerekSoftRenderer\\Source\\SubClass\\Private\\RotateObject.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-06T00:47:56.962Z"
+              "WhenOpened": "2025-03-06T00:47:56.962Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "RotateObject.h",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\SubClass\\RotateObject.h",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\SubClass\\RotateObject.h",
@@ -207,33 +207,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 23,
               "Title": "Plane.cpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\SubClass\\Private\\Plane.cpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\SubClass\\Private\\Plane.cpp",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\SubClass\\Private\\Plane.cpp",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\SubClass\\Private\\Plane.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-06T00:35:38.232Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 9,
               "Title": "Plane.h",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\SubClass\\Plane.h",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\SubClass\\Plane.h",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\SubClass\\Plane.h",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\SubClass\\Plane.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-03-06T00:34:09.755Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "Triangle.h",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Triangle.h",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Triangle.h",
@@ -245,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 21,
               "Title": "Texture.cpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\Texture.cpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Private\\Texture.cpp",
@@ -253,11 +253,12 @@
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Rendering\\Private\\Texture.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-04T00:30:07.958Z"
+              "WhenOpened": "2025-03-04T00:30:07.958Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 20,
               "Title": "Texture.h",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Texture.h",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Texture.h",
@@ -265,11 +266,12 @@
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Rendering\\Texture.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-04T00:29:50.547Z"
+              "WhenOpened": "2025-03-04T00:29:50.547Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "Object.h",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Object.h",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Gameplay\\Object.h",
@@ -288,27 +290,27 @@
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Private\\Light.cpp",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\Light.cpp",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Rendering\\Private\\Light.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-03T04:23:12.175Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 16,
               "Title": "Light.h",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Light.h",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Light.h",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Light.h",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Rendering\\Light.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-03-03T04:22:59.41Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "Vertex.hpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Vertex.hpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Vertex.hpp",
@@ -320,85 +322,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "DefaultShader.hpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Shader\\DefaultShader.hpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Shader\\DefaultShader.hpp",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Shader\\DefaultShader.hpp",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Rendering\\Shader\\DefaultShader.hpp",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAEgAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAAEUAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-02-26T12:00:40.688Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
               "Title": "Matrix.hpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Math\\Matrix.hpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Math\\Matrix.hpp",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Math\\Matrix.hpp",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Math\\Matrix.hpp",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAowCIBAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAGIBAAAAAAAAAAAowHUBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-02-24T09:43:03.23Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 15,
               "Title": "MeshObject.cpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Private\\MeshObject.cpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Gameplay\\Private\\MeshObject.cpp",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Private\\MeshObject.cpp",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Gameplay\\Private\\MeshObject.cpp",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAAwI8AAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAiwGwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-24T07:33:46.408Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "MeshObject.h",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\MeshObject.h",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Gameplay\\MeshObject.h",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\MeshObject.h",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Gameplay\\MeshObject.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAMwCcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-02-24T07:33:35.457Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Camera.cpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Private\\Camera.cpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Gameplay\\Private\\Camera.cpp",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Private\\Camera.cpp",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Gameplay\\Private\\Camera.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAawE0AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-24T06:46:21.359Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Camera.h",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Camera.h",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Gameplay\\Camera.h",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Camera.h",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Gameplay\\Camera.h",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAB4AAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAmwCUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-02-24T06:45:35.622Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "Shader.h",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Shader.h",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Shader.h",
@@ -410,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 22,
               "Title": "Shader.cpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\Shader.cpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Private\\Shader.cpp",
@@ -418,24 +420,25 @@
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Rendering\\Private\\Shader.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-23T13:57:27.618Z"
+              "WhenOpened": "2025-02-23T13:57:27.618Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Material.cpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\Material.cpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Private\\Material.cpp",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\Material.cpp",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Rendering\\Private\\Material.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-23T12:43:33.374Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "Material.h",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Material.h",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Material.h",
@@ -448,20 +451,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Vector.hpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Math\\Vector.hpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Math\\Vector.hpp",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Math\\Vector.hpp",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Math\\Vector.hpp",
-              "ViewState": "AgIAAAEBAAAAAAAAAAAYwBABAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADUBAAAAAAAAAAArwEIBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-02-19T12:12:30.526Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "Triangle.cpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\Triangle.cpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Private\\Triangle.cpp",
@@ -473,27 +476,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 4,
               "Title": "RendererSettings.cpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\RendererSettings.cpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Private\\RendererSettings.cpp",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\RendererSettings.cpp",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Rendering\\Private\\RendererSettings.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAArwBkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-19T06:46:05.102Z"
+              "WhenOpened": "2025-02-19T06:46:05.102Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 7,
               "Title": "RendererSettings.h",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\RendererSettings.h",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\RendererSettings.h",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\RendererSettings.h",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Rendering\\RendererSettings.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-19T06:45:47.034Z"
+              "WhenOpened": "2025-02-19T06:45:47.034Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -503,26 +508,27 @@
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Private\\Renderer.cpp",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Private\\Renderer.cpp",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Rendering\\Private\\Renderer.cpp",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAYwIwAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAAAFgAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-17T15:53:01.732Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 18,
               "Title": "Scene.cpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Private\\Scene.cpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Gameplay\\Private\\Scene.cpp",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Private\\Scene.cpp",
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Gameplay\\Private\\Scene.cpp",
-              "ViewState": "AgIAABAAAAAAAAAAAAAqwCsAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAD4vy0AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-17T15:20:36.481Z"
+              "WhenOpened": "2025-02-17T15:20:36.481Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 8,
               "Title": "Renderer.h",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Rendering\\Renderer.h",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Rendering\\Renderer.h",
@@ -530,11 +536,12 @@
               "RelativeToolTip": "DerekSoftRenderer\\Source\\Rendering\\Renderer.h",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAACMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-17T15:44:23.225Z"
+              "WhenOpened": "2025-02-17T15:44:23.225Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "Scene.h",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\Source\\Gameplay\\Scene.h",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\Source\\Gameplay\\Scene.h",
@@ -546,13 +553,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 3,
               "Title": "main.cpp",
               "DocumentMoniker": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\main.cpp",
               "RelativeDocumentMoniker": "DerekSoftRenderer\\main.cpp",
               "ToolTip": "E:\\ProjectFiles\\VisualStudio\\DerekSoftRenderer-git\\DerekSoftRenderer\\main.cpp",
               "RelativeToolTip": "DerekSoftRenderer\\main.cpp",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAAAEUAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-16T12:46:42.03Z",
               "EditorCaption": ""
