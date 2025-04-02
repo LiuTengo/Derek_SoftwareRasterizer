@@ -146,6 +146,7 @@
     <ClCompile Include="Source\Rendering\Private\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Enum\CameraControllEnum.hpp" />
     <ClInclude Include="Source\SubClass\RotateObject.h" />
     <ClInclude Include="Source\SubClass\Plane.h" />
     <ClInclude Include="Source\Rendering\Light.h" />

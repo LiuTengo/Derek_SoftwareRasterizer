@@ -59,7 +59,7 @@ void Renderer::Draw(const HDC& hdc, const std::vector<MeshObject*>& objArray, co
 {
 	//更新VP矩阵
 	RendererSettings::vp = camera->GetVPMatrix();
-
+	RendererSettings::CameraDirection = camera->cameraDirection;
 	//清除Buffer
 	ClearDepth();
 	ClearColor();
@@ -86,7 +86,8 @@ void Renderer::Draw(const HDC& hdc, const std::vector<MeshObject*>& objArray, co
 				//Viewport Transformation
 				v.clipPosition.x() = (v.clipPosition.x() * 0.5 + 0.5) * RendererSettings::WINDOW_WIDTH;
 				v.clipPosition.y() = (v.clipPosition.y() * 0.5 + 0.5) * RendererSettings::WINDOW_HEIGHT;//0.5 * RendererSettings::WINDOW_HEIGHT * (v.clipPosition.y() + 1);
-				v.clipPosition.z() = (v.clipPosition.z() - 0.1f) / (camera->GetFarSubstractNear());//(v.clipPosition.z()*f1+f2);
+				//v.clipPosition.z() = (v.clipPosition.z() - camera->GetNearPlane()) / (camera->GetFarSubstractNear());//线性空间，需更新为非线性空间
+				//v.clipPosition.z() = camera->GetNonLinearDepth(v.clipPosition.z());
 			}
 
 			for (int i = 0; i < 3;i++) {
@@ -102,10 +103,10 @@ void Renderer::Draw(const HDC& hdc, const std::vector<MeshObject*>& objArray, co
 void Renderer::Rasterize(MeshObject* obj,Triangle triangle)
 {
 	//cull back face
-	//Vector3f triNormal = triangle.GetTriangleNormal();
-	//if (triNormal.dot(RendererSettings::CameraDirection) < 0) {
-	//	return;
-	//}
+	Vector3f triNormal = triangle.GetTriangleNormal();
+	if (triNormal.dot(RendererSettings::CameraDirection) < 0) {
+		return;
+	}
 
 	auto v = triangle.toVector4();
 
@@ -164,7 +165,7 @@ void Renderer::CopyFrameBufferToHDC(const HDC& hdc)
 int Renderer::GetBufferIndex(int x,int y)
 {
 	//return y * RendererSettings::WINDOW_WIDTH + x;
-	return (RendererSettings::WINDOW_HEIGHT - y)* RendererSettings::WINDOW_WIDTH + x;
+	return (RendererSettings::WINDOW_HEIGHT - y-1)* RendererSettings::WINDOW_WIDTH + x;
 }
 
 Vector2f Renderer::Interpolate(float alpha, float beta, float gamma, const Vector2f& v1, const Vector2f& v2, const Vector2f& v3, float weight)

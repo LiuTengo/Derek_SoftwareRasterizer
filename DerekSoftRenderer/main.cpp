@@ -1,6 +1,7 @@
 #pragma once
 
 #include <windows.h>
+#include <WinUser.h>
 #include <iostream>
 
 #include "Source/SubClass/RotateObject.h"
@@ -28,7 +29,7 @@ void InitData() {
     Material* plane_mat = new Material(simpleShader);
 
     Plane* plane = new Plane("./Content/Model/plane.obj", plane_mat);
-    plane->SetLocation(Vector3f{ 0.0f,0.0,0.0f });
+    plane->SetLocation(Vector3f{ 0.0f,-0.75f,0.0f });
 
     RotateObject* box = new RotateObject("./Content/Model/spot/spot_triangulated_good.obj",spot_mat);
     // "./Content/Model/box_stack.obj"
@@ -62,14 +63,15 @@ void Draw(const HDC& hdc,const std::shared_ptr<Renderer>& renderer) {
     HDC mdc = CreateCompatibleDC(hdc);
     HBITMAP bmp = CreateCompatibleBitmap(hdc, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT);
     SelectObject(mdc,bmp);
+
+    scene->light->SetShadwMap(scene->objectArray, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT);
     //在缓冲区进行绘制
-    renderer->Draw(mdc,scene->objectArray,scene->camera);
+    //renderer->Draw(mdc,scene->objectArray,scene->camera);
     //将每帧buffer写入HDC
-    renderer->CopyFrameBufferToHDC(mdc);
-    //scene->light->SetShadwMap(scene->objectArray, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT);
-    //StretchDIBits(mdc, 0, 0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,
-    //   0, 0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,
-    //    scene->light->ShadowMap.data(), &bmi, DIB_RGB_COLORS, SRCCOPY);
+    //renderer->CopyFrameBufferToHDC(mdc);
+    StretchDIBits(mdc, 0, 0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,
+       0, 0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,
+        scene->light->ShadowMap.data(), &bmi, DIB_RGB_COLORS, SRCCOPY);
     //复制到DC
     BitBlt(hdc,0,0, RendererSettings::WINDOW_WIDTH, RendererSettings::WINDOW_HEIGHT,mdc,0,0,SRCCOPY);
     //释放缓冲区
@@ -149,7 +151,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     case WM_TIMER:
         if (scene != nullptr && wParam == 1)	// 进行更新
         {
-            scene->Update((float)RendererSettings::TimeStep * 0.001f);
+            scene->Update((float)RendererSettings::TimeStep * 0.01f);
             InvalidateRect(hwnd, NULL, TRUE);	// 让窗口变为无效,从而触发重绘消息
         }
         break;
@@ -164,42 +166,74 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
         EndPaint(hwnd, &ps);
     }
+    case WM_KEYDOWN: {
+        switch (wParam) {
+        case 'W':
+            //OutputDebugString((L"WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n"));
+            break;
+        case 'S':
+            break;
+        case 'A':
+            break;
+        case 'D':
+            break;
+        case VK_RBUTTON:
+            break;
+        }
+        //InvalidateRect(hwnd, NULL, TRUE);
+    }
+    case WM_KEYUP: {
+        switch (wParam) {
+        case 'W':
+            //OutputDebugString((L"WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW\n"));
+            break;
+        case 'S':
+            break;
+        case 'A':
+            break;
+        case 'D':
+            break;
+        case VK_RBUTTON:
+            break;
+        }
+        //InvalidateRect(hwnd, NULL, TRUE);
+    }
     return 0;
     }
     return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }
 
-int main() {
-    
-    Vector3f vec{1,0,2};
-    std::cout << vec << std::endl;
-    vec = vec + Vector3f{0,1,2};
-    std::cout << vec << std::endl;
-    //Test
-    //Matrix4X4i mat1 = {
-    //    {2,1,3,4},
-    //    {0,0,0,0},
-    //    {1,1,1,1},
-    //    {1,2,3,4}
-    //};
-
-    //Matrix4X4i mat2 = {
-    //    {2,0,0,0},
-    //    {0,2,0,0},
-    //    {0,0,2,0},
-    //    {0,0,0,2}
-    //};
-    //Matrix4X4i mat;
-    //Matrix4X4i::PrintMatrix(mat);
-
-    //Vector3f vec3 = { 2,1,3 };
-    //Vector4f vec4 = vec3.expand();
-    //Matrix4X4f transformMat = {
-    //    {1,0,0,-1},
-    //    {0,1,0,0},
-    //    {0,0,1,1},
-    //    {0,0,0,1}
-    //};
-    //Vector4f vec = transformMat * vec4;
-    //std::cout << vec << std::endl;
-}
+//int main() {
+//    
+//    Vector3f vec{1,0,2};
+//    std::cout << vec << std::endl;
+//    vec = vec + Vector3f{0,1,2};
+//    std::cout << vec << std::endl;
+//    //Test
+//    //Matrix4X4i mat1 = {
+//    //    {2,1,3,4},
+//    //    {0,0,0,0},
+//    //    {1,1,1,1},
+//    //    {1,2,3,4}
+//    //};
+//
+//    //Matrix4X4i mat2 = {
+//    //    {2,0,0,0},
+//    //    {0,2,0,0},
+//    //    {0,0,2,0},
+//    //    {0,0,0,2}
+//    //};
+//    //Matrix4X4i mat;
+//    //Matrix4X4i::PrintMatrix(mat);
+//
+//    //Vector3f vec3 = { 2,1,3 };
+//    //Vector4f vec4 = vec3.expand();
+//    //Matrix4X4f transformMat = {
+//    //    {1,0,0,-1},
+//    //    {0,1,0,0},
+//    //    {0,0,1,1},
+//    //    {0,0,0,1}
+//    //};
+//    //Vector4f vec = transformMat * vec4;
+//    //std::cout << vec << std::endl;
+//}

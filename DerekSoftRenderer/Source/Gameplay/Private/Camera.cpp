@@ -1,11 +1,11 @@
 #include "../Camera.h"
 
 Camera::Camera()
-	:nearPlane(0.1f),farPlane(100.0f),fov(45.0f),
+	:nearPlane(0.1f),farPlane(50.0f),fov(60.0f),
 	aspectRatio(RendererSettings::WINDOW_WIDTH/ RendererSettings::WINDOW_HEIGHT),
 	lookTarget(Vector3f{0,0,0})
 {
-	position = Vector3f{0,0,5};
+	position = Vector3f{0,0,5.5};
 	cameraDirection = Vector3f::normalize(lookTarget-position);
 	Vector3f up = Vector3f{0,1,0};
 
@@ -13,10 +13,9 @@ Camera::Camera()
 	cameraUp = Vector3f::normalize(cameraRight.cross(cameraDirection));
 }
 
-Camera::Camera(Vector3f lookPoint,float far, float near, float fov, float eyeRatio)
-	:nearPlane(near), farPlane(far), fov(fov), aspectRatio(eyeRatio),lookTarget(lookPoint)
+Camera::Camera(const Vector3f& position, const Vector3f& lookPoint,float far, float near, float fov, float eyeRatio)
+	:position(position),nearPlane(near), farPlane(far), fov(fov), aspectRatio(eyeRatio),lookTarget(lookPoint)
 {
-	position = Vector3f{ 0,0,1};
 	cameraDirection = Vector3f::normalize(lookTarget - position);
 	Vector3f up = Vector3f{ 0,1,0 };
 
@@ -51,7 +50,6 @@ Matrix4X4f Camera::GetViewMatrix() const
 Matrix4X4f Camera::GetVPMatrix() const
 {
 	Matrix4X4f vpMatrix;
-	RendererSettings::v = GetViewMatrix();
 	vpMatrix = GetProjectionMatrix() * GetViewMatrix();
 	return vpMatrix;
 }
@@ -60,3 +58,19 @@ float Camera::GetFarSubstractNear() const
 {
 	return farPlane-nearPlane;
 }
+
+float Camera::GetNearPlane() const
+{
+	return nearPlane;
+}
+
+/// <summary>
+/// 非线性深度参数
+/// </summary>
+/// <returns></returns>
+double Camera::GetNonLinearDepth(double z) const
+{
+	double inv_z = 1. / z;
+	return inv_z*((nearPlane- z)*farPlane)/(nearPlane-farPlane);
+}
+

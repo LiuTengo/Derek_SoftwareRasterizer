@@ -35,7 +35,7 @@ void Scene::AddObject(MeshObject* newObj)
 void Scene::SetMainCamera(Camera mainCam)
 {
 	camera = std::make_unique<Camera>(mainCam);
-	RendererSettings::CameraDirection = camera->cameraDirection;
+	RendererSettings::CameraPosition = camera->position;
 }
 
 void Scene::SetMainLight(Light mainLight)

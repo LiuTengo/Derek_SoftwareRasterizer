@@ -45,7 +45,7 @@ Vector3f Triangle::GetTriangleNormal() const
 {
     Vector3f v21 = (vertices[0].clipPoints - vertices[1].clipPoints).toVector3();
     Vector3f v32 = (vertices[2].clipPoints - vertices[1].clipPoints).toVector3();
-    return v21.cross(v32);
+    return Vector3f::normalize(v21.cross(v32));
 }
 
 std::array<Vector4f, 3> Triangle::toVector4() const

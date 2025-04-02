@@ -1,11 +1,37 @@
 ﻿D:\ProgramFiles\VisualStudio\2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(DerekSoftRenderer.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
-  main.cpp
+  Light.cpp
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\RendererSettings.h(35,2): warning C4091: “static ”: 没有声明变量时忽略“RendererSettings”的左侧
 E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\ObjLoader\OBJ_Loader.h(949,18): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\RendererSettings.h(25,2): warning C4091: “static ”: 没有声明变量时忽略“RendererSettings”的左侧
-E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Shader\DefaultShader.hpp(42,20): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Shader\DefaultShader.hpp(51,65): warning C4244: “参数”: 从“double”转换到“const T”，可能丢失数据
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Light.cpp(52,59): warning C4244: “=”: 从“double”转换到“T”，可能丢失数据
           with
           [
               T=float
+          ]
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Light.cpp(53,59): warning C4244: “=”: 从“double”转换到“T”，可能丢失数据
+          with
+          [
+              T=float
+          ]
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Light.cpp(64,16): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Light.cpp(66,16): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Light.cpp(76,13): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Light.cpp(78,13): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Light.cpp(80,13): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Light.cpp(82,13): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Light.cpp(91,26): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Light.cpp(100,37): warning C4244: “=”: 从“double”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=BYTE
+          ]
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Light.cpp(101,37): warning C4244: “=”: 从“double”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=BYTE
+          ]
+E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\DerekSoftRenderer\Source\Rendering\Private\Light.cpp(102,37): warning C4244: “=”: 从“double”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=BYTE
           ]
   DerekSoftRenderer.vcxproj -> E:\ProjectFiles\VisualStudio\DerekSoftRenderer-git\x64\Debug\DerekSoftwareRasterizer.exe

@@ -4,6 +4,7 @@
 #include "../Math/Matrix.hpp"
 #include "../Rendering/RendererSettings.h"
 #include "../Math/ConstMathValue.hpp"
+#include "../Enum/CameraControllEnum.hpp"
 
 enum class ProjectionType {
 	Orthographic,
@@ -27,12 +28,17 @@ public:
 
 public:
 	Camera();
-	Camera(Vector3f lookPoint, float far,float near,float fov,float eyeRatio);
+	Camera(const Vector3f& position,const Vector3f& lookPoint, float far,float near,float fov,float eyeRatio);
 
 public:
 	Matrix4X4f GetProjectionMatrix(ProjectionType type = ProjectionType::Perspective) const;
 	Matrix4X4f GetViewMatrix() const;
 	Matrix4X4f GetVPMatrix() const;
 	float GetFarSubstractNear() const;
+	float GetNearPlane() const;
+	double GetNonLinearDepth(double z) const;
+	//void Update(float dt);
+	//void SetCameraMoveVelocity(MoveDirection direction);
+	//void SetCameraRotateVelocity();
 };
 

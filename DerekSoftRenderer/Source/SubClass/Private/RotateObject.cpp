@@ -14,6 +14,6 @@ RotateObject::~RotateObject()
 
 void RotateObject::Update(float dt)
 {
-	float offsetAngle = dt * 30.0f;
-	//rotation.y() = rotation.y() + offsetAngle;
+	float offsetAngle = dt * 45.0f;
+	rotation.y() = rotation.y() + offsetAngle;
 }

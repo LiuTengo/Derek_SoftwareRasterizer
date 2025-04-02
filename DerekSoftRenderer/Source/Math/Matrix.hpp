@@ -281,17 +281,95 @@ inline Matrix<T, n, m> Matrix<T, m, n>::Transpose() const
 }
 
 //TODO: 
-template<class T, int m, int n>
-inline Matrix<T, m, n> Matrix<T, m, n>::Inverse() const
-{
-	if (IsSquare()) {
+//template<class T, int m, int n>
+//inline Matrix<T, m, n> Matrix<T, m, n>::Inverse() const
+//{
+//	if (!IsSquare()) {
+//		throw std::invalid_argument("Only square matrix can be inversed");
+//	}
+//
+//	// 对于 3x3 矩阵，使用伴随矩阵法
+//	if (m == 3 && n == 3) {
+//		Matrix<T, 3, 3> result;
+//		T det = this->Determinant();
+//		if (det == 0) {
+//			throw std::invalid_argument("Matrix is singular and cannot be inverted");
+//		}
+//
+//		result = this->Adjugate() * (1 / det);
+//		return result;
+//	}
+//	// 对于 4x4 矩阵，使用高斯-约旦消元法
+//	else if (m == 4 && n == 4) {
+//		Matrix<T, 4, 4> augmentedMatrix = *this;
+//		Matrix<T, 4, 4> identity = Matrix<T, 4, 4>::Identity();
+//
+//		// 执行高斯-约旦消元法
+//		for (int i = 0; i < 4; ++i) {
+//			T diagElement = augmentedMatrix[i][i];
+//			if (diagElement == 0) {
+//				// 交换行
+//				for (int j = i + 1; j < 4; ++j) {
+//					if (augmentedMatrix[j][i] != 0) {
+//						std::swap(augmentedMatrix[i], augmentedMatrix[j]);
+//						std::swap(identity[i], identity[j]);
+//						break;
+//					}
+//				}
+//				diagElement = augmentedMatrix[i][i];
+//			}
+//
+//			// 归一化当前行
+//			for (int col = 0; col < 4; ++col) {
+//				augmentedMatrix[i][col] /= diagElement;
+//				identity[i][col] /= diagElement;
+//			}
+//
+//			// 消去其他行的当前列
+//			for (int row = 0; row < 4; ++row) {
+//				if (row != i) {
+//					T factor = augmentedMatrix[row][i];
+//					for (int col = 0; col < 4; ++col) {
+//						augmentedMatrix[row][col] -= augmentedMatrix[i][col] * factor;
+//						identity[row][col] -= identity[i][col] * factor;
+//					}
+//				}
+//			}
+//		}
+//
+//		return identity;
+//	}
+//	else {
+//		throw std::invalid_argument("Matrix inversion only implemented for 3x3 and 4x4 matrices");
+//	}
+//}
 
-	}
-	else {
-		throw std::invalid_argument("Only square matrix can be inversed");
-		return Matrix<T>();
-	}
-}
+//// 3x3矩阵的行列式
+//template<class T>
+//inline T Matrix<T, 3, 3>::Determinant() const {
+//	return data[0][0] * (data[1][1] * data[2][2] - data[1][2] * data[2][1]) -
+//		data[0][1] * (data[1][0] * data[2][2] - data[1][2] * data[2][0]) +
+//		data[0][2] * (data[1][0] * data[2][1] - data[1][1] * data[2][0]);
+//}
+//
+//// 3x3矩阵的伴随矩阵
+//template<class T>
+//inline Matrix<T, 3, 3> Matrix<T, 3, 3>::Adjugate() const {
+//	Matrix<T, 3, 3> adjugate;
+//	adjugate[0][0] = data[1][1] * data[2][2] - data[1][2] * data[2][1];
+//	adjugate[0][1] = data[0][2] * data[2][0] - data[0][0] * data[2][2];
+//	adjugate[0][2] = data[0][1] * data[1][0] - data[0][0] * data[1][1];
+//
+//	adjugate[1][0] = data[1][2] * data[2][0] - data[1][0] * data[2][2];
+//	adjugate[1][1] = data[0][0] * data[2][2] - data[0][2] * data[2][0];
+//	adjugate[1][2] = data[0][1] * data[1][0] - data[0][0] * data[1][1];
+//
+//	adjugate[2][0] = data[1][0] * data[2][1] - data[1][1] * data[2][0];
+//	adjugate[2][1] = data[0][1] * data[2][0] - data[0][0] * data[2][1];
+//	adjugate[2][2] = data[0][0] * data[1][1] - data[0][1] * data[1][0];
+//
+//	return adjugate;
+//}
 
 #pragma endregion
 
